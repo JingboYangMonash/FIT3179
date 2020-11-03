@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Scatter plot Matrix",
-  "width": "container",
-  "height":"container",
+  "title": "Scatterplot Matrix",
   "data": {"url": "https://raw.githubusercontent.com/JingboYangMonash/FIT3179/master/data/world_happiness_2016.csv"},
   "repeat": {
     "row": ["Score", "GDP", "social_support", "Health"],
     "column": ["Health", "social_support", "GDP", "Score"]
   },
   "spec": {
+    "width": 100,
+    "height": 100,
     "mark": "circle",
     "selection": {
       "brush": {
