@@ -9,6 +9,10 @@
     {
       "aggregate": [{"op": "mean", "field": "Score", "as": "avg_score"}],
       "groupby": ["Region"]
+    },
+    {
+      "calculate": "datum.Score > 5.382 ? 'Above_avg' : 'Below_avg'",
+      "as": "class"
     }
   ],
   "encoding": {
@@ -27,7 +31,13 @@
   "layer": [
     {
       "mark": "bar",
-      "encoding": {"color": {"field": "Region", "type": "nominal"}}
+      "encoding": {
+        "color": {
+          "field": "Region",
+          "scale": {"range": ["#675193", "#ca8861"]},
+          "legend": null
+        }
+      }
     }
   ],
   "config": {}
