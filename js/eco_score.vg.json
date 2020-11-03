@@ -58,7 +58,8 @@
   
   "encoding": {
     "x": {"field": "GDP", "type": "quantitative", "title": "GDP per capita"},
-    "y": {"field": "Score", "type": "quantitative", "title": "Happiness Score"}
+    "y": {"field": "Score", "type": "quantitative", "title": "Happiness Score",
+    "scale": {"type": "linear", "domain": [2.9, 7.6]}}
     },
     "layer": [
       {

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Average Happiness Score of each Region",
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JingboYangMonash/FIT3179/master/data/world_happiness_2016.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "mean", "field": "Score", "as": "avg_score"}],
+      "groupby": ["Region"]
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Region",
+      "type": "nominal",
+      "title": "Region",
+      "axis": {"labelAngle": 15}
+    },
+    "y": {
+      "field": "avg_score",
+      "type": "quantitative",
+      "title": "Happiness Score"
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {"color": {"field": "Region", "type": "nominal"}}
+    }
+  ],
+  "config": {}
+}
