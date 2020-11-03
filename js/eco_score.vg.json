@@ -56,19 +56,53 @@
     {"filter": "datum.Family >= Family_Above"},
     {"filter": "Region_selection == null || datum.Region == Region_selection"}
   ],
-  "mark": "circle",
   "encoding": {
     "x": {"field": "GDP", "type": "quantitative", "title": "GDP per capita"},
-    "y": {"field": "Score", "type": "quantitative", "title": "Happiness Score"},
-    "color": {"field": "Country", "type": "nominal"},
-    "size": {"field": "Health", "type": "quantitative"},
-    "tooltip": [
-      {"field": "Country", "type": "nominal"},
-      {"field": "Score", "type": "quantitative", "format": ","},
-      {"field": "GDP", "type": "quantitative", "format": ","},
-      {"field": "Health", "type": "quantitative", "format": ","},
-      {"field": "Family", "type": "quantitative", "format": ","}
-    ]
+    "y": {"field": "Score", "type": "quantitative", "title": "Happiness Score"}
   },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "color": {"field": "Country", "type": "nominal"},
+        "size": {"field": "Health", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Score", "type": "quantitative", "format": ","},
+          {"field": "GDP", "type": "quantitative", "format": ","},
+          {"field": "Health", "type": "quantitative", "format": ","},
+          {"field": "Family", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'China' || datum['Country'] == 'India' || datum['Country'] == 'Australia' || datum['Country'] == 'United Kingdom' || datum['Country'] == 'Japan' ||  datum['Country'] == 'United States'|| datum['Country'] == 'Syria'|| datum['Country'] == 'Qatar'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Score", "type": "quantitative", "format": ","},
+          {"field": "GDP", "type": "quantitative", "format": ","},
+          {"field": "Health", "type": "quantitative", "format": ","},
+          {"field": "Family", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ],
   "config": {}
 }
