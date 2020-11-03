@@ -52,7 +52,7 @@
     }
   ],
   "transform": [
-    {"filter": "datum.Family >= Family_Above"},
+    {"filter": "datum.Family >= Family_Factor"},
     {"filter": "Region_selection == null || datum.Region == Region_selection"}
   ],
   
