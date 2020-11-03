@@ -10,10 +10,6 @@
     {
       "aggregate": [{"op": "mean", "field": "Score", "as": "avg_score"}],
       "groupby": ["Region"]
-    },
-    {
-      "calculate": "datum.Score > 5.382 ? 'Above_avg' : 'Below_avg'",
-      "as": "class"
     }
   ],
   "encoding": {
@@ -39,7 +35,20 @@
           "legend": null
         }
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -10,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "avg_score", "type": "quantitative", "format": ".2f"},
+        "color": {"value": "black"}
+      }
     }
-  ],
-  "config": {}
+  ]
 }
