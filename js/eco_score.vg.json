@@ -73,7 +73,7 @@
           {"field": "Score", "type": "quantitative", "format": ","},
           {"field": "GDP", "type": "quantitative", "format": ","},
           {"field": "Health", "type": "quantitative", "format": ","},
-          {"field": "social_support", "type": "quantitative", "format": ","}
+          {"field": "social_support", "type": "quantitative", "title": "Social Support", "format": ","}
         ]
       }
     },
