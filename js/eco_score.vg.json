@@ -66,7 +66,7 @@
       "mark": "circle",
       "encoding": {
         "color": {"field": "Country", "type": "nominal", "legend": null},
-        "size": {"field": "Health", "type": "quantitative", "title": "Family"},
+        "size": {"field": "Health", "type": "quantitative", "title": "Family", "legend": {"orient": "left"}},
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Score", "type": "quantitative", "format": ","},
@@ -79,7 +79,7 @@
     {
       "mark": {
         "type": "text",
-        "align": "left",
+        "align": "right",
         "baseline": "middle",
         "dx": -12,
         "fontSize": 11.5,
