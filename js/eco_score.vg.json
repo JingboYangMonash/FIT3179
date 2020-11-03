@@ -56,12 +56,13 @@
     {"filter": "datum.Family >= Family_Above"},
     {"filter": "Region_selection == null || datum.Region == Region_selection"}
   ],
+  
   "encoding": {
     "x": {"field": "GDP", "type": "quantitative", "title": "GDP per capita"},
     "y": {"field": "Score", "type": "quantitative", "title": "Happiness Score"}
-  },
-  "layer": [
-    {
+    },
+    "layer": [
+      {
       "mark": "circle",
       "encoding": {
         "color": {"field": "Country", "type": "nominal"},
@@ -103,6 +104,5 @@
         ]
       }
     }
-  ],
-  "config": {}
+  ]
 }
