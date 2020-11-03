@@ -8,14 +8,14 @@
   },
   "params": [
     {
-      "name": "Family_Factor",
+      "name": "social_support_threshold",
       "value": 0,
       "bind": {
         "input": "range",
         "min": 0,
         "max": 1.1,
         "step": 0.1,
-        "name": "Family factor: "
+        "name": "social support: "
       }
     },
     {
@@ -53,7 +53,7 @@
     }
   ],
   "transform": [
-    {"filter": "datum.Family >= Family_Factor"},
+    {"filter": "datum.social_support >= social_support_threshold"},
     {"filter": "Region_selection == null || datum.Region == Region_selection"}
   ],
   
@@ -67,13 +67,13 @@
       "mark": "circle",
       "encoding": {
         "color": {"field": "Country", "type": "nominal", "legend": null},
-        "size": {"field": "Health", "type": "quantitative", "title": "Family", "legend": {"orient": "left"}},
+        "size": {"field": "Health", "type": "quantitative", "title": "social_support", "legend": {"orient": "left"}},
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Score", "type": "quantitative", "format": ","},
           {"field": "GDP", "type": "quantitative", "format": ","},
           {"field": "Health", "type": "quantitative", "format": ","},
-          {"field": "Family", "type": "quantitative", "format": ","}
+          {"field": "social_support", "type": "quantitative", "format": ","}
         ]
       }
     },
@@ -101,7 +101,7 @@
           {"field": "Score", "type": "quantitative", "format": ","},
           {"field": "GDP", "type": "quantitative", "format": ","},
           {"field": "Health", "type": "quantitative", "format": ","},
-          {"field": "Family", "type": "quantitative", "format": ","}
+          {"field": "social_support", "type": "quantitative", "format": ","}
         ]
       }
     }
