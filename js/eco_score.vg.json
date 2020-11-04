@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "height": 400,
+  "height": 430,
   "title": "Effect of Economy on Happiness Score",
   "data": {
     "url": "https://raw.githubusercontent.com/JingboYangMonash/FIT3179/master/data/world_happiness_2016.csv"
