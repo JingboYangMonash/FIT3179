@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Scatterplot Matrix",
+  "title": "Relationship among Happiness Score, GDP, Social Support and Health",
   "data": {"url": "https://raw.githubusercontent.com/JingboYangMonash/FIT3179/master/data/world_happiness_2016.csv"},
   "repeat": {
     "row": ["Score", "GDP", "social_support", "Health"],
